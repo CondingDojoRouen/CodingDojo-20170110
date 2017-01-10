@@ -92,12 +92,22 @@ namespace CodingDojo
         public void Returns24IfArrayContains3Books1()
         {
             //Arrange
-            var books = new int[] { 1, 1, 1};
+            var books = new int[] { 1, 1, 1 };
             //Act
             var result = KataPotter.GetPricing(books);
             //Assert
             Assert.AreEqual(24, result);
         }
 
+        [TestMethod]
+        public void Returns5PercentDiscountFor2DifferentBooks()
+        {
+            //Arrange
+            var books = new int[] { 1, 5 };
+            //Act
+            var result = KataPotter.GetPricing(books);
+            //Assert
+            Assert.AreEqual(16 * 0.95, result);
+        }
     }
 }

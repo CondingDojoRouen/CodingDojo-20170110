@@ -8,9 +8,9 @@ namespace CodingDojo
 {
     public static class KataPotter
     {
-        public static int GetPricing(int[] books)
+        public static double GetPricing(int[] books)
         {
-            int result = 0;
+            double result = 0;
 
             if (books == null)
                 throw new ArgumentNullException();
@@ -19,7 +19,8 @@ namespace CodingDojo
                 throw new ArgumentOutOfRangeException();
             else if (books.Distinct().Count() == 1)
                 result = 8 * books.Length;
-
+            else
+                result = 8 * books.Length * 0.95;
             return result;
         }
     }
