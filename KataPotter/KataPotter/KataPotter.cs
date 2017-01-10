@@ -14,12 +14,14 @@ namespace CodingDojo
 
             if (books == null)
                 throw new ArgumentNullException();
+
+            if (books.Any(b => b > 5))
+                throw new ArgumentOutOfRangeException();
             else if (books.Count() == 1)
                 result = 8;
             else if (books.Distinct().Count() == 1)
-            {
                 result = 16;
-            }
+
             return result;
         }
     }

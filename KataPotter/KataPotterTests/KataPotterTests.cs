@@ -52,6 +52,16 @@ namespace CodingDojo
             Assert.AreNotEqual(16, result2);
         }
 
+        [TestMethod]
+        public void ThrowArgumentOutOfRangeExceptionIfArrayContainsAnElementIdGreaterThan5()
+        {
+            //Arrange
+            int[] books = new int[] { 1,2,6,6 };
+            //Act
+            //Assert
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => KataPotter.GetPricing(books));
+        }
+
         
     }
 }
