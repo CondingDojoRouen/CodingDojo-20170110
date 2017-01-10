@@ -17,13 +17,12 @@ namespace CodingDojo
 
             if (books.Any(b => b < 1 || b > 5))
                 throw new ArgumentOutOfRangeException();
-            else if (books.Distinct().Count() == 1)
-                result = 8 * books.Length;
-            else
-            {
-                int numberOfDistinctBook = books.Length;
-                result = 8 * numberOfDistinctBook * GetDiscount(numberOfDistinctBook);
-            }
+
+            var distinctBook = books.Distinct().Count();
+            var discount =  GetDiscount(distinctBook);
+
+            result = 8 * distinctBook * discount + (books.Length - distinctBook) * 8;
+            
             return result;
         }
 

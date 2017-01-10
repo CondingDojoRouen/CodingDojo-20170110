@@ -148,5 +148,17 @@ namespace CodingDojo
             Assert.AreEqual(40 * 0.75, result);
 
         }
+
+        [TestMethod]
+        public void Return23dot2IfArrayContains3BooksWith2SameBook()
+        {
+            //Arrange
+            var books = new int[] { 1, 2, 2 };
+            //Act
+            var result = KataPotter.GetPricing(books);
+
+            //Assert
+            Assert.AreEqual(23.2, result);
+        }
     }
 }
