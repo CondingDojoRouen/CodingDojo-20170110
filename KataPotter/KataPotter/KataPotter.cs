@@ -37,6 +37,10 @@ namespace CodingDojo
                     return 0.95;
                 case 3:
                     return 0.90;
+                case 4:
+                    return 0.80;
+                case 5:
+                    return 0.75;
                 default:
                     return 1;
             }
