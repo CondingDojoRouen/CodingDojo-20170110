@@ -7,8 +7,14 @@ namespace CodingDojo
     public class KataPotterTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Returns0ifArrayIsEmpty()
         {
+            //Arrange
+            int[] books = new int[] { };
+            //Act
+            var result = KataPotter.GetPricing(books);
+            //Assert
+            Assert.AreEqual(0, result);
         }
     }
 }

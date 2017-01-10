@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace CodingDojo
 {
-    class KataPotter
+    public static class KataPotter
     {
-        static void Main(string[] args)
+        public static int GetPricing(int[] books)
         {
+            return 0;
         }
     }
 }
