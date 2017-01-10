@@ -10,6 +10,8 @@ namespace CodingDojo
     {
         public static int GetPricing(int[] books)
         {
+            if (books == null)
+                throw new ArgumentNullException();
             return 0;
         }
     }

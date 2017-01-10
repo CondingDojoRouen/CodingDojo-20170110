@@ -16,5 +16,14 @@ namespace CodingDojo
             //Assert
             Assert.AreEqual(0, result);
         }
+
+        [TestMethod]
+        public void ThrowArgumentNullExceptionIfParamIsNull()
+        {
+            //Arrange            
+            //Act
+            //Assert
+            Assert.ThrowsException<ArgumentNullException>(() => KataPotter.GetPricing(null));
+        }
     }
 }
