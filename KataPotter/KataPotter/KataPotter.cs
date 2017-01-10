@@ -20,8 +20,26 @@ namespace CodingDojo
             else if (books.Distinct().Count() == 1)
                 result = 8 * books.Length;
             else
-                result = 8 * books.Length * 0.95;
+            {
+                int numberOfDistinctBook = books.Length;
+                result = 8 * numberOfDistinctBook * GetDiscount(numberOfDistinctBook);
+            }
             return result;
+        }
+
+
+
+        private static double GetDiscount(int numberOfDistinctBook)
+        {
+            switch (numberOfDistinctBook)
+            {
+                case 2:
+                    return 0.95;
+                case 3:
+                    return 0.90;
+                default:
+                    return 1;
+            }
         }
     }
 }
