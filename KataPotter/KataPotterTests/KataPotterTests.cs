@@ -37,5 +37,21 @@ namespace CodingDojo
             Assert.AreEqual(8, result);
 
         }
+
+        [TestMethod]
+        public void Returns16IfContainsOnly2SameBooks()
+        {
+            //Arrange
+            int[] books = new int[] { 1, 1 };
+            int[] books2 = new int[] { 1, 2 };
+            //Act
+            var result = KataPotter.GetPricing(books);
+            var result2 = KataPotter.GetPricing(books2);
+            //Assert
+            Assert.AreEqual(16, result);
+            Assert.AreNotEqual(16, result2);
+        }
+
+        
     }
 }

@@ -11,10 +11,15 @@ namespace CodingDojo
         public static int GetPricing(int[] books)
         {
             int result = 0;
+
             if (books == null)
                 throw new ArgumentNullException();
             else if (books.Count() == 1)
                 result = 8;
+            else if (books.Distinct().Count() == 1)
+            {
+                result = 16;
+            }
             return result;
         }
     }
