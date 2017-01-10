@@ -15,7 +15,7 @@ namespace CodingDojo
             if (books == null)
                 throw new ArgumentNullException();
 
-            if (books.Any(b => b > 5))
+            if (books.Any(b => b < 1 || b > 5))
                 throw new ArgumentOutOfRangeException();
             else if (books.Count() == 1)
                 result = 8;

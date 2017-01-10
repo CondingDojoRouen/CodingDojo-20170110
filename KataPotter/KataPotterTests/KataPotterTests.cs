@@ -53,7 +53,7 @@ namespace CodingDojo
         }
 
         [TestMethod]
-        public void ThrowArgumentOutOfRangeExceptionIfArrayContainsAnElementIdGreaterThan5()
+        public void ThrowArgumentOutOfRangeExceptionIfArrayContainsElementsIdGreaterThan5()
         {
             //Arrange
             int[] books = new int[] { 1,2,6,6 };
@@ -62,6 +62,19 @@ namespace CodingDojo
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => KataPotter.GetPricing(books));
         }
 
-        
+        [TestMethod]
+        public void ThrowArgumentOutOfRangeExceptionIfArrayContainsElementsIdLowerThan1()
+        {
+            // Arrange
+            int[] books = new int[] { -9825, 4, 2 };
+            int[] books2 = new int[] { -9825 };
+            int[] books3 = new int[] { 12, 0 };
+
+            // Act
+            // Assert
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => KataPotter.GetPricing(books));
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => KataPotter.GetPricing(books2));
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => KataPotter.GetPricing(books3));
+        }       
     }
 }
