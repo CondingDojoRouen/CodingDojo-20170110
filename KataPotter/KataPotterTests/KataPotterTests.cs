@@ -136,5 +136,17 @@ namespace CodingDojo
 
         }
 
+        [TestMethod]
+        public void Return25PercentDiscountFor5DifferentBooks()
+        {
+            //Arrange
+            var books = new int[] { 1, 2, 3,4,5 };
+            //Act
+            var result = KataPotter.GetPricing(books);
+
+            //Assert
+            Assert.AreEqual(40 * 0.75, result);
+
+        }
     }
 }
