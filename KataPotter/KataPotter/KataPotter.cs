@@ -20,13 +20,18 @@ namespace CodingDojo
 
             var distinctBook = books.Distinct().Count();
             var discount =  GetDiscount(distinctBook);
-
-            result = 8 * distinctBook * discount + (books.Length - distinctBook) * 8;
+                        
+            result = Calc(books);
             
             return result;
         }
 
-
+        private static double Calc(int[] b)
+        {
+            var distinctBook = b.Distinct().Count();
+            var discount = GetDiscount(distinctBook);
+            return 8 * distinctBook * discount + (b.Length - distinctBook) * 8;
+        }
 
         private static double GetDiscount(int numberOfDistinctBook)
         {
