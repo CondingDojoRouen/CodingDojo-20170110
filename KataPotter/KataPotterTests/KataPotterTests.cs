@@ -150,7 +150,7 @@ namespace CodingDojo
         }
 
         [TestMethod]
-        public void Return23dot2IfArrayContains3BooksWith2SameBook()
+        public void Return23dot2IfArrayContains3BooksWith2SimilarBooks()
         {
             //Arrange
             var books = new int[] { 1, 2, 2 };
