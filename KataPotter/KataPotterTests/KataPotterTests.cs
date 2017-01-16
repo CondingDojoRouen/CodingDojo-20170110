@@ -162,7 +162,7 @@ namespace CodingDojo
         }
 
         //[TestMethod]
-        //public void Return30dot4IfArrayContains4BooksWith2Times2SameBook()
+        //public void Return30dot4IfArrayContains4BooksWith2Times2SimilarBooks()
         //{
         //    //Arrange
         //    var books = new int[] { 1, 1, 2, 2 };
