@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CodingDojo
@@ -7,27 +8,42 @@ namespace CodingDojo
     {
         public static double GetPricing(int[] books)
         {
-            double result = 0;
-
             if (books == null)
                 throw new ArgumentNullException();
 
             if (books.Any(b => b < 1 || b > 5))
                 throw new ArgumentOutOfRangeException();
 
-            var distinctBook = books.Distinct().Count();
-            var discount =  GetDiscount(distinctBook);
-                        
-            result = Calc(books);
+            //Construire la liste de liste
+            var listOfDuplicates = new List<List<int>>();
+            foreach(var b in books)
+            {
+                List<int> currentList = listOfDuplicates.FirstOrDefault(arr => !arr.Contains(b));
+                if(currentList == default(List<int>))
+                {
+                    listOfDuplicates.Add(new List<int> { b });
+                }
+                else
+                {
+                    currentList.Add(b);
+                }
+            }
             
-            return result;
+            return Calc(listOfDuplicates);
         }
 
-        private static double Calc(int[] b)
+        private static double Calc(List<List<int>> listOfDuplicates)
         {
-            var distinctBook = b.Distinct().Count();
-            var discount = GetDiscount(distinctBook);
-            return 8 * distinctBook * discount + (b.Length - distinctBook) * 8;
+            double result = 0;
+            //Pour chaque liste
+            foreach (var list in listOfDuplicates)
+            {
+                var distinctBook = list.Distinct().Count();
+                var discount = GetDiscount(distinctBook);
+                //Nombre d'occurence de chacun des livres
+                result += 8 * distinctBook * discount + (list.Count() - distinctBook) * 8;
+            }
+            return result;
         }
 
         private static double GetDiscount(int numberOfDistinctBook)

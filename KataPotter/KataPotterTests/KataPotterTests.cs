@@ -161,16 +161,17 @@ namespace CodingDojo
             Assert.AreEqual(23.2, result);
         }
 
-        //[TestMethod]
-        //public void Return30dot4IfArrayContains4BooksWith2Times2SimilarBooks()
-        //{
-        //    //Arrange
-        //    var books = new int[] { 1, 1, 2, 2 };
-        //    //Act
-        //    var result = KataPotter.GetPricing(books);
+        [TestMethod]
+        public void Return30dot4IfArrayContains4BooksWith2Times2SimilarBooks()
+        {
+            //Arrange
+            var books = new int[] { 1, 1, 2, 2 };
+            //Act
+            var result = KataPotter.GetPricing(books);
 
-        //    //Assert
-        //    Assert.AreEqual(30.4, result);
-        //}
+            //Assert
+            Assert.AreEqual(30.4, result);
+        }
+
     }
 }
