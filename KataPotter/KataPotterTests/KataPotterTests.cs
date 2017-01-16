@@ -127,7 +127,7 @@ namespace CodingDojo
         public void Return20PercentDiscountFor4DifferentBooks()
         {
             //Arrange
-            var books = new int[] { 1, 2, 3,4 };
+            var books = new int[] { 1, 2, 3, 4 };
             //Act
             var result = KataPotter.GetPricing(books);
 
@@ -140,7 +140,7 @@ namespace CodingDojo
         public void Return25PercentDiscountFor5DifferentBooks()
         {
             //Arrange
-            var books = new int[] { 1, 2, 3,4,5 };
+            var books = new int[] { 1, 2, 3, 4, 5 };
             //Act
             var result = KataPotter.GetPricing(books);
 
