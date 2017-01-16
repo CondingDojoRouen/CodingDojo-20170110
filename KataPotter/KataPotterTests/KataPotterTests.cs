@@ -173,5 +173,33 @@ namespace CodingDojo
             Assert.AreEqual(30.4, result);
         }
 
+        [TestMethod]
+        public void Return36dot8IfArrayContains2books1and2books2and1book3()
+        {
+            //Arrange
+            var books = new int[] { 5, 5, 1, 1, 2, 2, 3, 4 };
+            //Act
+            var result = KataPotter.GetPricing(books);
+
+            //Assert
+            Assert.AreEqual(2 * (8 * 4 * 0.8), result);
+        }
+
+        [TestMethod]
+        public void Return256IfArrayContains2books1and2books2and1book3()
+        {
+            //Arrange
+            var books = new int[] { 5, 5, 5, 5, 5,
+                                    1, 1, 1, 1, 1,
+                                    2, 2, 2, 2,
+                                    3, 3, 3, 3, 3,
+                                    4, 4, 4, 4 };
+            //Act
+            var result = KataPotter.GetPricing(books);
+
+            //Assert
+            Assert.AreEqual(3 * (8 * 5 * 0.75) + 2 * (8 * 4 * 0.8), result);
+        }
+
     }
 }

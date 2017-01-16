@@ -16,7 +16,9 @@ namespace CodingDojo
 
             //Construire la liste de liste
             var listOfDuplicates = new List<List<int>>();
-            foreach(var b in books)
+            var listOfDuplicates2 = new List<List<int>>();
+
+            foreach (var b in books)
             {
                 List<int> currentList = listOfDuplicates.FirstOrDefault(arr => !arr.Contains(b));
                 if(currentList == default(List<int>))
@@ -27,9 +29,20 @@ namespace CodingDojo
                 {
                     currentList.Add(b);
                 }
+
+                List<int> currentList2 = listOfDuplicates2.OrderBy(arr => arr.Count())
+                    .FirstOrDefault(arr => !arr.Contains(b));
+                if (currentList2 == default(List<int>))
+                {
+                    listOfDuplicates2.Add(new List<int> { b });
+                }
+                else
+                {
+                    currentList2.Add(b);
+                }
             }
             
-            return Calc(listOfDuplicates);
+            return Math.Min(Calc(listOfDuplicates), Calc(listOfDuplicates2));
         }
 
         private static double Calc(List<List<int>> listOfDuplicates)
